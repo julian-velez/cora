@@ -1,0 +1,80 @@
+body {
+  background-color: #f2f2f2; /* Establece el color de fondo del cuerpo del documento en un tono de gris claro */
+}
+
+.heart {
+  width: 100px; /* Establece el ancho del elemento corazón en 100 píxeles */
+  height: 100px; /* Establece la altura del elemento corazón en 100 píxeles */
+  background-color: red; /* Establece el color de fondo del elemento corazón en rojo */
+  transform: rotate(45deg); /* Rota el elemento corazón 45 grados en el sentido de las agujas del reloj */
+  position: relative; /* Establece la posición del elemento corazón como relativa */
+  margin: 50px; /* Establece un margen de 50 píxeles alrededor del elemento corazón */
+}
+
+.heart:before,
+.heart:after {
+  content: ''; /* Agrega contenido vacío a los pseudo-elementos ::before y ::after */
+  width: 100px; /* Establece el ancho de los pseudo-elementos ::before y ::after en 100 píxeles */
+  height: 100px; /* Establece la altura de los pseudo-elementos ::before y ::after en 100 píxeles */
+  background-color: red; /* Establece el color de fondo de los pseudo-elementos ::before y ::after en rojo */
+  border-radius: 50%; /* Establece el radio de borde de los pseudo-elementos ::before y ::after en 50%, lo que los convierte en círculos */
+  position: absolute; /* Establece la posición de los pseudo-elementos ::before y ::after como absoluta */
+}
+
+.heart:before {
+  top: -50px; /* Posiciona el pseudo-elemento ::before 50 píxeles por encima del elemento corazón */
+  left: 0; /* Posiciona el pseudo-elemento ::before en la posición izquierda del elemento corazón */
+}
+
+.heart:after {
+  top: 0; /* Posiciona el pseudo-elemento ::after en la parte superior del elemento corazón */
+  left: 50px; /* Posiciona el pseudo-elemento ::after 50 píxeles a la derecha del elemento corazón */
+}
+
+.heart-container {
+  perspective: 1000px; /* Establece la perspectiva en 1000 píxeles para el contenedor del corazón */
+  display: flex; /* Establece el contenedor del corazón como un contenedor flexible */
+  justify-content: center; /* Centra el contenido horizontalmente dentro del contenedor */
+  align-items: center; /* Centra el contenido verticalmente dentro del contenedor */
+  height: 100vh; /* Establece la altura del contenedor del corazón como el 100% de la altura de la ventana visible */
+}
+
+.heart {
+  width: 100px; /* Establece el ancho del elemento corazón en 100 píxeles */
+  height: 100px; /* Establece la altura del elemento corazón en 100 píxeles */
+  position: relative; /* Establece la posición del elemento corazón como relativa */
+  transform-style: preserve-3d; /* Establece el estilo de transformación en 3D para el elemento corazón */
+  animation: heartbeat 1.5s infinite ease-in-out; /* Aplica la animación "heartbeat" al elemento corazón con una duración de 1.5 segundos, se repite infinitamente y tiene una función de aceleración y desaceleración suave */
+}
+
+.heart:before,
+.heart:after {
+  content: ''; /* Agrega contenido vacío a los pseudo-elementos ::before y ::after */
+  width: 100px; /* Establece el ancho de los pseudo-elementos ::before y ::after en 100 píxeles */
+  height: 100px; /* Establece la altura de los pseudo-elementos ::before y ::after en 100 píxeles */
+  background-color: red; /* Establece el color de fondo de los pseudo-elementos ::before y ::after en rojo */
+  border-radius: 50%; /* Establece el radio de borde de los pseudo-elementos ::before y ::after en 50%, lo que los convierte en círculos */
+  position: absolute; /* Establece la posición de los pseudo-elementos ::before y ::after como absoluta */
+  transform-style: preserve-3d; /* Establece el estilo de transformación en 3D para los pseudo-elementos ::before y ::after */
+}
+
+.heart:before {
+  top: -50px; /* Posiciona el pseudo-elemento ::before 50 píxeles por encima del elemento corazón */
+  left: 0; /* Posiciona el pseudo-elemento ::before en la posición izquierda del elemento corazón */
+  transform: rotateZ(45deg); /* Rota el pseudo-elemento ::before 45 grados en el sentido de las agujas del reloj alrededor de su eje Z */
+}
+
+.heart:after {
+  top: 0; /* Posiciona el pseudo-elemento ::after en la parte superior del elemento corazón */
+  left: 50px; /* Posiciona el pseudo-elemento ::after 50 píxeles a la derecha del elemento corazón */
+  transform: rotateZ(-45deg); /* Rota el pseudo-elemento ::after 45 grados en el sentido contrario a las agujas del reloj alrededor de su eje Z */
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale3d(1, 1, 1); /* Establece la escala del elemento corazón en su tamaño original en los estados inicial y final de la animación */
+  }
+  50% {
+    transform: scale3d(1.3, 1.3, 1.3); /* Establece la escala del elemento corazón a 1.3 veces su tamaño original en el estado intermedio de la animación */
+  }
+}
